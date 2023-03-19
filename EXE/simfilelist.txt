@@ -1,0 +1,4 @@
+#test-bench
+../SIM/SIM_TOP.sv
+#Design Under Verification
+../RTL/DUV.sv
