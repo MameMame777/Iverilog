@@ -7,7 +7,7 @@ module DUV(
     output logic [1:0] out_b
 );
 
-    always @(posedge clk or posedge arst) begin
+    always_ff @(posedge clk or posedge arst) begin
         if(arst==1'b1) begin
             out_a[1:0] <= 2'd0;
             out_b[1:0] <= 2'd0;
