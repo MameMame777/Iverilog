@@ -12,6 +12,9 @@ logic  in_a;
 logic  in_b;
 logic [1:0] out_a;
 logic [1:0] out_b;
+logic [1:0] out_c;
+logic [1:0] out_d;
+
 
 //instanciate
 DUV u_DUV (
@@ -20,7 +23,9 @@ DUV u_DUV (
  .in_a (in_a),
  .in_b (in_b),
  .out_a(out_a[1:0]),
- .out_b(out_b[1:0])
+ .out_b(out_b[1:0]),
+ .out_c(out_c[1:0]),
+ .out_d(out_d[1:0])
 );
 
 //initial 

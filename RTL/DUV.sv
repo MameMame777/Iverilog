@@ -4,16 +4,25 @@ module DUV(
     input logic in_a,
     input logic in_b,
     output logic [1:0] out_a,
-    output logic [1:0] out_b
+    output logic [1:0] out_b,
+    output logic [1:0] out_c,
+    output logic [1:0] out_d
 );
-    logic [1:0] out_c;
+    logic  [1:0] and_atoc;
+
+    always_comb begin
+        and_atoc[1:0] = out_a[1:0] & out_b[1:0] & out_c[1:0];
+    end
     always_ff @(posedge clk or posedge arst) begin
         if(arst==1'b1) begin
             out_a[1:0] <= 2'd0;
             out_b[1:0] <= 2'd0;
+            out_d      <= 1'd0;
+            
         end else begin
             out_a[1:0] <= {out_a[0],in_a};
             out_b[1:0] <= {out_b[0],in_b};
+            out_d[1:0] <= and_atoc[1:0]; 
         end
     end
 
